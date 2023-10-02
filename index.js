@@ -1,7 +1,10 @@
 const app = require("express")();
 const axios = require("axios");
-const { response } = require("express");
+require("express");
+require("dotenv").config();
+
 const PORT = 8080;
+const API_KEY = process.env.API_KEY;
 
 app.listen(PORT, () => console.log(`It's alive on http://localhost:${PORT}`));
 
@@ -18,8 +21,7 @@ app.get("/advanced-stats", async (req, res) => {
       {
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer api_key",
+          Authorization: `Bearer ${API_KEY}`,
         },
       }
     )
