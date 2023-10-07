@@ -31,7 +31,7 @@ app.get("/advanced-stats", async (req, res) => {
         response.data.map((team) => {
           stats.push({
             id: team.team,
-            name: team.team,
+            teamName: team.team,
             offensivePPA: team.offense.ppa,
             offensiveSuccessRate: team.offense.successRate,
             offensiveExplosiveness: team.offense.explosiveness,
