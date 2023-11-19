@@ -72,9 +72,7 @@ app.get("/advanced-stats", async (req, res) => {
         });
         res.status(200).send(stats);
       } else {
-        response
-          .status(404)
-          .send({ message: "Request to CFB Data api has failed" });
+        res.status(404).send({ message: "Request to CFB Data api has failed" });
       }
     });
 });
